@@ -1,10 +1,21 @@
-# ZZCircleProgressViewWithDot
-圆型进度with圆点进度指示符
+//
+//  ViewController.m
+//  ZZCircleProgressView
+//
+//  Created by 刘威振 on 12/22/15.
+//  Copyright © 2015 LiuWeiZhen. All rights reserved.
+//
 
-Circle progress view
+#import "ViewController.h"
+#import "ZZCircleProgressView.h"
 
-###使用方法
-```
+@interface ViewController ()
+
+@property (nonatomic) ZZCircleProgressView *progressView;
+@end
+
+@implementation ViewController
+
 - (IBAction)click:(id)sender {
     self.progressView.progress += 0.05;
 }
@@ -13,20 +24,18 @@ Circle progress view
     [super viewDidLoad];
 
     self.progressView = [[ZZCircleProgressView alloc] initWithFrame:CGRectMake(100, 100, 200, 200)];
+    
+    // ZZCircleProgressView *progressView = [[ZZCircleProgressView alloc] init];
+    // progressView.frame = CGRectMake(100, 100, 200, 200);
     _progressView.backgroundColor = [UIColor yellowColor];
     _progressView.trackColor      = [UIColor whiteColor];
     _progressView.progressColor   = [UIColor greenColor];
     _progressView.progress        = 0.0f;
     _progressView.progressWidth   = 20;
     _progressView.showProgressIndicator = YES;
+    
+    // progressView.frame = CGRectMake(100, 100, 200, 200);
     [self.view addSubview:_progressView];
 }
 
-```
-
-###效果图
-![](./1.png)
-
-###进度小圆点计算公式(高中三角函数)
-![](./2.png)
-
+@end
